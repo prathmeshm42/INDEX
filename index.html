@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Girlfriend Day, Radha!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff2f9);
+      font-family: 'Poppins', sans-serif;
+      color: #ff5c8a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-top: 1rem;
+      color: #ff2e63;
+      text-align: center;
+    }
+
+    .message {
+      max-width: 700px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin: 2rem 0;
+    }
+
+    .message p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: #ff2e63;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 1rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #e6004c;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff5c8a;
+      transform: rotate(45deg);
+      animation: float 10s infinite ease-in;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff5c8a;
+      border-radius: 50%;
+    }
+
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1) rotate(45deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.5) rotate(45deg); opacity: 0; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .message {
+        padding: 1.2rem;
+      }
+      .message p {
+        font-size: 1rem;
+      }
+      .btn {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts">
+    <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 4s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 75%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 90%; animation-delay: 5s;"></div>
+  </div>
+
+  <h1>Happy Girlfriend Day, Radha (Byko) 💖</h1>
+
+  <div class="message">
+    <p>
+      Hey my Radha, 💌<br><br>
+      Today is National Girlfriend Day — and I couldn’t let it pass without telling you just how much you mean to me. Even though we’re miles apart, my heart feels closer to you than ever.  
+      <br><br>
+      You’re the smile to my day, the peace to my night, and the rhythm to my heartbeat. Our love is strong, patient, and beautiful — just like you.
+      <br><br>
+      I may not be there to hold your hand today, but this little page is me holding your heart. I love you more than words can capture.
+      <br><br>
+      Forever your biggest fan and hopeless aashiq,  
+      <br>— Yours Gotya 😁 💘
+    </p>
+    <button class="btn" onclick="goToMemories()">Next 📸</button>
+  </div>
+
+  <audio autoplay loop id="bgMusic">
+    <source src="s1t.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function goToMemories() {
+      const audio = document.getElementById('bgMusic');
+      sessionStorage.setItem('musicTime', audio.currentTime);
+      window.location.href = 'memories.html';
+    }
+  </script>
+</body>
+</html>
